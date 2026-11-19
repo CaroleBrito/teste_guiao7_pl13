@@ -1,9 +1,11 @@
 package pt.ul.fc;
 
 /**
- * Cliente de {@link MaquinaLavar}. NÃO ALTERE ESTE FICHEIRO (nem sequer espaços ou comentários):
+ * Cliente de {@link MaquinaLavar}. NÃO ALTERE ESTE FICHEIRO (nem sequer espaços
+ * ou comentários):
  * a nota depende das linhas exatas deste ficheiro.
- * Cada sequenciaN() usa um objeto novo e termina com uma chamada que viola o protocolo.
+ * Cada sequenciaN() usa um objeto novo e termina com uma chamada que viola o
+ * protocolo.
  */
 public class Main {
 
@@ -13,7 +15,6 @@ public class Main {
         sequencia3();
         sequencia4();
     }
-
 
     /** Sequência inválida: a última chamada viola o protocolo. */
     static void sequencia1() {

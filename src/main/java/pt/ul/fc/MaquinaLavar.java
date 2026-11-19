@@ -4,29 +4,35 @@ import liquidjava.specification.StateRefinement;
 import liquidjava.specification.StateSet;
 
 /** Lavar roupa numa máquina de lavar. */
-@StateSet({"vazia", "carregada", "aLavar", "terminada"})
+@StateSet({ "vazia", "carregada", "aLavar", "terminada" })
 public class MaquinaLavar {
 
-    @StateRefinement(to="vazia()")
-    public MaquinaLavar() {}
+    @StateRefinement(to = "vazia()")
+    public MaquinaLavar() {
+    }
 
     /** Descarrega a roupa; a máquina fica vazia. */
-    @StateRefinement(from="true", to="true")
-    public void descarregar() {}
+    @StateRefinement(from = "carregada()", to = "vazia()")
+    public void descarregar() {
+    }
 
     /** Termina a lavagem. */
-    @StateRefinement(from="true", to="true")
-    public void terminar() {}
+    @StateRefinement(from = "aLavar()", to = "terminada()")
+    public void terminar() {
+    }
 
     /** Interrompe a lavagem; a roupa fica na máquina. */
-    @StateRefinement(from="true", to="true")
-    public void interromper() {}
+    @StateRefinement(from = "aLavar()", to = "carregada()")
+    public void interromper() {
+    }
 
     /** Carrega a roupa. */
-    @StateRefinement(from="vazia()", to="carregada()")
-    public void carregar() {}
+    @StateRefinement(from = "vazia()", to = "carregada()")
+    public void carregar() {
+    }
 
     /** Inicia a lavagem. */
-    @StateRefinement(from="true", to="true")
-    public void iniciar() {}
+    @StateRefinement(from = "carregada()", to = "aLavar()")
+    public void iniciar() {
+    }
 }
